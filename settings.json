@@ -115,6 +115,10 @@
         "Invoke-Expression": false,
         "iex": false,
         // === MY CUSTOMIZATIONS ===
-        "uniq": true
+      "uniq": true,
+        "terminal.integrated.env.linux": {
+          "HISTFILE": "${env:HOME}/history/.bash_history_${workspaceFolderBasename}",
+        "terminal.integrated.env.osx": {
+          "HISTFILE": "${env:HOME}/history/.bash_history_${workspaceFolderBasename}"
     }
 }
