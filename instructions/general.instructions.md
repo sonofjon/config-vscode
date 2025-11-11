@@ -69,10 +69,24 @@ description: "General programming guidelines for code quality and consistency"
    third-person present (indicative) (e.g., 'Returns the user's full
    name.').
 
-3. The same rules apply to Git commits.
-
-4. If a README.md or other documentation file exists for the current
+3. If a README.md or other documentation file exists for the current
    project, always keep it up-to-date with any code changes applied.
+
+## Version Control (Git)
+
+1. The same format rules apply to Git commits as for docstrings (specified
+   above).
+
+2. Additionally,
+
+    2.1 Prefix the summary line with the filename and a colon. If multiple
+    files are involved only include the key file of the commit and represent
+    the rest by three dots. Examples:
+
+    "file.txt: Update category with color"
+    "file.txt, ...: Update color categories everywhere"
+
+    2.2 The body of the commit should be listed as bullets.
 
 ## Tests
 
