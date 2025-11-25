@@ -1,6 +1,6 @@
 ---
 agent: agent
-model: Claude Sonnet 4
+model: Claude Sonnet 4.5
 description: 'Generate instructions for a subfolder in a repository'
 ---
 Your task is to "onboard" this subfolder to Copilot coding agent by adding
