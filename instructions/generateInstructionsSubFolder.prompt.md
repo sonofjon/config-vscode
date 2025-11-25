@@ -3,6 +3,11 @@ agent: agent
 model: Claude Sonnet 4.5
 description: 'Generate instructions for a subfolder in a repository'
 ---
+
+IMPORTANT: Before starting, determine which subfolder to analyze by:
+1. Checking the user's currently open file or directory
+2. Asking the user: "Which subfolder should I analyze?"
+
 Your task is to "onboard" this subfolder to Copilot coding agent by adding
 an AGENTS.md file in the subfolder that contains information describing how
 a coding agent seeing this subfolder for the first time can work most
