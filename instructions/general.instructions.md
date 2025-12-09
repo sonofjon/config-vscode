@@ -5,24 +5,25 @@ description: "General programming guidelines for code quality and consistency"
 
 # General
 
-1. Only apply the specific changes I explicitly request. In other words: Do
-   not introduce any new functionality or stylistic updates beyond my
-   instructions.
+1. Do not jump into implementation or changing files unless clearly
+   instructed to make changes. When the user's intent is ambiguous, default
+   to providing information, doing research, and providing recommendations
+   rather than taking action. Only proceed with edits, modifications, or
+   implementations when the user explicitly requests them.
 
-2. Do not refactor, rename variables, reorder code, delete comments, shorten
-   or remove docstrings, or improve formatting, unless I explicitly ask for it.
-
-3. Unless I explicitly tell you that I want you to produce code, you initial
-   response should be a discussion of possible solutions to the problem at
-   hand.
+2. Only apply the specific changes the user requests. In other words: Do not
+   introduce any new functionality or stylistic updates beyond the user's
+   instructions. This means: Do not refactor, rename variables, reorder
+   code, delete comments, shorten or remove docstrings, or improve
+   formatting, unless he user explicitly ask for it.
 
 # Chat
 
-1. When I ask a question about code, you MUST not edit the code; please just
-   answer the question.
+1. When the user asks a question about code, you MUST not edit the code;
+   please just answer the question.
 
-2. When providing several options for me to choose from please list them
-   using unique numbered bullets so that I can refer to them easily.
+2. When providing several options for the user to choose from list them
+   using unique numbered bullets so that the user can refer to them easily.
 
 # Format
 
