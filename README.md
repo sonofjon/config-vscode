@@ -1,24 +1,21 @@
 # VS Code Configuration
 
-This directory contains VS Code settings, keybindings, and custom Copilot
-instructions.
+This directory contains VS Code settings, keybindings, and prompts.
 
 ## Structure
 
 ```
 config-vscode/
-├── README.md                    # This file
-├── settings.json                # User settings
-├── keybindings.json             # Custom key bindings
-└── instructions/                # Custom Copilot instructions
-    ├── general.instructions.md  # General programming guidelines
-    ├── python.instructions.md   # Python-specific guidelines
-    └── elisp.instructions.md    # Emacs Lisp guidelines
+├── README.md                      # This file
+├── settings.json                  # User settings
+├── keybindings.json               # Custom key bindings
+├── extensions.txt                 # List of extensions
+└── prompts/                       # Custom AI prompts
 ```
 
-## Installation
+## Configuration
 
-### VS Code Configuration Locations
+### Configuration Locations
 
 The VS Code user configuration directory varies by operating system:
 
@@ -26,20 +23,39 @@ The VS Code user configuration directory varies by operating system:
 - **Linux**: `~/.config/Code/User/`
 - **Windows**: `%APPDATA%\Code\User\`
 
-### Manual Setup
+### Installation
 
-1. **Settings and Keybindings:**
-   Copy the configuration files to your VS Code user directory (see
-   locations above):
-   ```
-   settings.json → {VS Code User Directory}/settings.json
-   keybindings.json → {VS Code User Directory}/keybindings.json
-   ```
+Copy the configuration files to your VS Code user directory (see
+locations above):
+```
+settings.json -> {VS Code User Directory}/settings.json
+keybindings.json -> {VS Code User Directory}/keybindings.json
+```
 
-2. **Custom Instructions:**
-   Copy the instruction files to the prompts subdirectory:
-   ```
-   instructions/*.instructions.md → {VS Code User Directory}/prompts/
-   ```
+## AI Instructions Setup
 
-   **Note:** You may need to create the `prompts` directory if it doesn't exist.
+### Prerequisites
+
+This setup integrates with a centralized AI configuration directory at
+`~/dotfiles/config-ai/` that contains shared instruction files
+(SYSTEM.md).
+
+### Configuration Steps
+
+1. **Configure VS Code to locate instruction files:**
+   Add the following to your settings.json:
+   ```json
+   "chat.instructionsFilesLocations": [
+       "{User Directory}/.github/instructions"
+   ]
+   ```
+   Note that chat.instructionsFilesLocations does not understand "~" for
+   the home directory.
+
+2. **Create symlink to shared instructions:**
+   ```bash
+   mkdir -p ~/.github/instructions
+   ln -s ~/dotfiles/config-ai/SYSTEM.md \
+       ~/.github/instructions/copilot.instructions.md
+   ```
+   This makes the centralized SYSTEM.md file available to Copilot Chat.
